@@ -1,7 +1,19 @@
 ﻿using Backend;
+// Stack usibg a list
+//var stack = new StackUsingList<string>();
+// Stack using an array
+//var stack = new StackUsingArray<string>(10);
+// Stack from .NET Framework
+var stack = new Stack<string>();
 
-var stack = new StackUsingArray<string>(10);
+// Demo for "inifinite" for stack| in a list
+//var random = new Random();
 
+//while (true)
+//{
+// stack.Push(random.Next());
+// Console.WriteLine(stack.Peek());
+//}
 
 var option = string.Empty;
 do
@@ -32,11 +44,9 @@ do
     }
     catch (Exception ex)
     {
-        Console.BackgroundColor = ConsoleColor.Yellow;
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine(ex.Message);
         Console.ForegroundColor = ConsoleColor.White;
-        Console.BackgroundColor = ConsoleColor.Black;
     }
 } while (option != "0");
 
@@ -49,3 +59,4 @@ string Menu()
     Console.Write("Digite su opción: ");
     return Console.ReadLine()!;
 }
+
