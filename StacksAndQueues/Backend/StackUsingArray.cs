@@ -16,25 +16,12 @@ public class StackUsingArray<T>
 
     public void Push(T item)
     {
-        if (IsFull)
-            throw new InvalidOperationException("Stack is full");
-
+        if (IsFull) throw new InvalidOperationException("Stack is full");
         _stack[++_top] = item;
     }
 
-    public T Pop ()
-    {
-        if (IsEmpty)
-            throw new InvalidOperationException("Stack is empty");
-        
-        return _stack[_top--];
-    }
+    public T Pop () => IsEmpty ? throw new InvalidOperationException("Stack is empty") : _stack[_top--];
 
-    public T Peek()
-    {
-        if (IsEmpty)
-            throw new InvalidOperationException("Stack is empty");
-
-        return _stack[_top];
-    }
+    public T Peek() => IsEmpty ? throw new InvalidOperationException("Stack is empty") : _stack[_top];
+    
 }

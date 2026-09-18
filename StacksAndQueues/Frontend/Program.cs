@@ -1,19 +1,20 @@
-﻿using Backend;
-// Stack usibg a list
-//var stack = new StackUsingList<string>();
-// Stack using an array
-//var stack = new StackUsingArray<string>(10);
-// Stack from .NET Framework
+﻿// Stack using a list
+using Backend;
+/**
+var stack = new StackUsingList<string>();
+Stack using an array
+var stack = new StackUsingArray<string>(10);
+Stack from .NET Framework
 var stack = new Stack<string>();
 
-// Demo for "inifinite" for stack| in a list
-//var random = new Random();
+Demo for "inifinite" for stack| in a list
+var random = new Random();
 
-//while (true)
-//{
-// stack.Push(random.Next());
-// Console.WriteLine(stack.Peek());
-//}
+while (true)
+{
+    stack.Push(random.Next());
+    Console.WriteLine(stack.Peek());
+}
 
 var option = string.Empty;
 do
@@ -59,4 +60,47 @@ string Menu()
     Console.Write("Digite su opción: ");
     return Console.ReadLine()!;
 }
+*/
 
+// var queue = new QueueUsingArray<string>(10);
+// var queue = new QueueUsingList<string>();
+var queue = new Queue<string>();
+var option = string.Empty;
+do
+{
+    try
+    {
+        option = Menu();
+        switch (option)
+        {
+            case "1":
+                Console.Write("Enter item to queue: ");
+                queue.Enqueue(Console.ReadLine()!);
+                break;
+            case "2":
+                Console.WriteLine($"Dequeue item: {queue.Dequeue()}");
+                break;
+            case "3":
+                Console.WriteLine($"Peek item: {queue.Peek()}");
+                break;
+            default:
+                Console.WriteLine("Invalid option");
+                break;
+        }
+    }
+    catch(Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+    
+} while(option != "0");
+
+string Menu()
+{
+    Console.WriteLine("1. Queue");
+    Console.WriteLine("2. Dequeue");
+    Console.WriteLine("3. Peek");
+    Console.WriteLine("0. Salir");
+    Console.Write("Enter your choice: ");
+    return Console.ReadLine()!;
+}

@@ -18,10 +18,8 @@ public class StackUsingList<T>
 
     public T Pop()
     {
-        if (IsEmpty)
-        {
-            throw new InvalidOperationException("Stack is empty");
-        }
+        if (IsEmpty) throw new InvalidOperationException("Stack is empty");
+
         T item = _stack[_stack.Count - 1];
         _stack.RemoveAt(_stack.Count - 1);
         return item;
@@ -29,10 +27,7 @@ public class StackUsingList<T>
 
     public T Peek()
     {
-        if (IsEmpty)
-        {
-            throw new InvalidOperationException("Stack is empty");
-        }
+        if (IsEmpty) throw new InvalidOperationException("Stack is empty");
         return _stack[_stack.Count - 1];
     }
 }
